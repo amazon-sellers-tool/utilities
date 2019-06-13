@@ -1,4 +1,4 @@
-// Amazon Seller Utilities API Responses
+// Package utilities Amazon Seller Utilities API Responses
 package utilities
 
 import (
@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// SnapshotResponse See https://advertising.amazon.com/API/docs/v2/reference/snapshots
 type SnapshotResponse struct {
 	Title      string `json:"title"`
 	Type       string `json:"type"`
@@ -45,6 +46,7 @@ type SnapshotResponse struct {
 	RequestId string `json:"requestId"`
 }
 
+// ApiResponse An basic api response struct
 type ApiResponse struct {
 	Version int              `json:"version"`
 	Success bool             `json:"success"`
@@ -53,6 +55,7 @@ type ApiResponse struct {
 	Error   error            `json:"error"`
 }
 
+// SnapshotError An error response from the API
 func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
 	apiResponse := ApiResponse{
 		Version: version,
@@ -71,6 +74,7 @@ func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
 	return
 }
 
+// SnapshotSuccess A success response from the API
 func SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse) {
 	apiResponse := ApiResponse{
 		Version: version,

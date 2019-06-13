@@ -1,4 +1,4 @@
-// Amazon Seller Utilities
+// Package utilities Amazon Seller Utilities
 package utilities
 
 import (
@@ -10,13 +10,13 @@ import (
 	"time"
 )
 
+// AmazonToken Describes what the token will look like
 type AmazonToken struct {
 	AccessToken       string        `json:"amazon_access_token"`
 	AccessTokenExpiry time.Duration `json:"amazon_accessToken_expiry"`
 }
 
-// GetToken
-// Very important important function that retrieves a token based on a profile id.
+// GetToken Very important function that retrieves a token based on a profile id.
 // @param string profileID Profile id
 // @param string userID User id
 // @return AmazonToken
