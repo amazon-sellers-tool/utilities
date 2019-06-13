@@ -7,6 +7,8 @@ import (
 	"net/http"
 )
 
+type ApiResponses struct{}
+
 // SnapshotResponse See https://advertising.amazon.com/API/docs/v2/reference/snapshots
 type SnapshotResponse struct {
 	Title      string `json:"title"`
@@ -56,7 +58,7 @@ type ApiResponse struct {
 }
 
 // SnapshotError An error response from the API
-func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
+func (ApiResponses) SnapshotError(w http.ResponseWriter, version int, code int, err error) {
 	apiResponse := ApiResponse{
 		Version: version,
 		Success: true,
@@ -75,7 +77,7 @@ func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
 }
 
 // SnapshotSuccess A success response from the API
-func SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse) {
+func (ApiResponses) SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse) {
 	apiResponse := ApiResponse{
 		Version: version,
 		Success: true,
