@@ -7,14 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 )
-
-// AmazonToken Describes what the token will look like
-type AmazonToken struct {
-	AccessToken       string        `json:"amazon_access_token"`
-	AccessTokenExpiry time.Duration `json:"amazon_accessToken_expiry"`
-}
 
 // GetToken Very important function that retrieves a token based on a profile id.
 // @param string profileID Profile id
