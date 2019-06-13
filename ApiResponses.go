@@ -7,7 +7,14 @@ import (
 	"net/http"
 )
 
-type ApiResponses struct{}
+// ApiResponse The interface
+type APIResponse interface {
+	SnapshotError(w http.ResponseWriter, version int, code int, err error)
+	SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse)
+}
+
+// APIResponses holds funcs
+type APIResponses struct{}
 
 // SnapshotResponse See https://advertising.amazon.com/API/docs/v2/reference/snapshots
 type SnapshotResponse struct {
@@ -48,8 +55,8 @@ type SnapshotResponse struct {
 	RequestId string `json:"requestId"`
 }
 
-// ApiResponse An basic api response struct
-type ApiResponse struct {
+// Response An basic api response struct
+type Response struct {
 	Version int              `json:"version"`
 	Success bool             `json:"success"`
 	Status  int              `json:"status"`
@@ -58,8 +65,8 @@ type ApiResponse struct {
 }
 
 // SnapshotError An error response from the API
-func (ApiResponses) SnapshotError(w http.ResponseWriter, version int, code int, err error) {
-	apiResponse := ApiResponse{
+func (APIResponses) SnapshotError(w http.ResponseWriter, version int, code int, err error) {
+	apiResponse := Response{
 		Version: version,
 		Success: true,
 		Status:  code,
@@ -77,8 +84,8 @@ func (ApiResponses) SnapshotError(w http.ResponseWriter, version int, code int, 
 }
 
 // SnapshotSuccess A success response from the API
-func (ApiResponses) SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse) {
-	apiResponse := ApiResponse{
+func (APIResponses) SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse) {
+	apiResponse := Response{
 		Version: version,
 		Success: true,
 		Status:  200,
@@ -93,4 +100,9 @@ func (ApiResponses) SnapshotSuccess(w http.ResponseWriter, version int, result S
 	log.Output(1, string(apiResponseJSON))
 	json.NewEncoder(w).Encode(apiResponse)
 	return
+}
+
+// GetAPIResponses
+func GetAPIResponses() APIResponse {
+	return APIResponses{}
 }
