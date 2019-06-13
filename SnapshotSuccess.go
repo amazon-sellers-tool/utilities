@@ -13,8 +13,7 @@ func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error
 	var decodedBody SnapshotResponse
 	errDecode := json.NewDecoder(result).Decode(&decodedBody)
 	if errDecode != nil {
-		SnapshotError(w, version, 404, errDecode)
-		return
+		return SnapshotError(w, version, 404, errDecode)
 	}
 	apiResponse := ApiResponse{
 		Version: version,
