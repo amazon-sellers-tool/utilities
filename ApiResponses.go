@@ -3,6 +3,7 @@ package utilities
 
 import (
 	"encoding/json"
+	"io"
 	"log"
 	"net/http"
 )
@@ -10,7 +11,7 @@ import (
 // ApiResponse The interface
 type APIResponse interface {
 	SnapshotError(w http.ResponseWriter, version int, code int, err error)
-	SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse)
+	SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader)
 }
 
 // APIResponses holds funcs
@@ -84,12 +85,18 @@ func (APIResponses) SnapshotError(w http.ResponseWriter, version int, code int, 
 }
 
 // SnapshotSuccess A success response from the API
-func (APIResponses) SnapshotSuccess(w http.ResponseWriter, version int, result SnapshotResponse) {
+func (APIResponses) SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) {
+	var decodedBody SnapshotResponse
+	errDecode := json.NewDecoder(result).Decode(&decodedBody)
+	if errDecode != nil {
+		GetAPIResponses().SnapshotError(w, version, 404, errDecode)
+		return
+	}
 	apiResponse := Response{
 		Version: version,
 		Success: true,
 		Status:  200,
-		Results: result,
+		Results: decodedBody,
 		Error:   nil,
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
