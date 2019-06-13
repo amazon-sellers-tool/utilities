@@ -9,7 +9,7 @@ import (
 )
 
 // SnapshotSuccess A success response from the API
-func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) {
+func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error {
 	var decodedBody SnapshotResponse
 	errDecode := json.NewDecoder(result).Decode(&decodedBody)
 	if errDecode != nil {
@@ -29,6 +29,5 @@ func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) {
 		panic(err)
 	}
 	log.Output(1, string(apiResponseJSON))
-	json.NewEncoder(w).Encode(apiResponse)
-	return
+	return json.NewEncoder(w).Encode(apiResponse)
 }

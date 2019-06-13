@@ -8,7 +8,7 @@ import (
 )
 
 // SnapshotError An error response from the API
-func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
+func SnapshotError(w http.ResponseWriter, version int, code int, err error) error {
 	apiResponse := ApiResponse{
 		Version: version,
 		Success: true,
@@ -22,6 +22,5 @@ func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
 		panic(err)
 	}
 	log.Output(1, string(apiResponseJSON))
-	json.NewEncoder(w).Encode(apiResponse)
-	return
+	return json.NewEncoder(w).Encode(apiResponse)
 }
