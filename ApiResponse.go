@@ -7,5 +7,5 @@ type APIResponse struct {
 	Success bool             `json:"success"`
 	Status  int              `json:"status"`
 	Results SnapshotResponse `json:"results"`
-	Error   error            `json:"error"`
+	Error   string           `json:"error"`
 }

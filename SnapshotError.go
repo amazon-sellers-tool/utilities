@@ -14,7 +14,7 @@ func SnapshotError(w http.ResponseWriter, version int, code int, err error) erro
 		Success: true,
 		Status:  code,
 		Results: SnapshotResponse{},
-		Error:   err,
+		Error:   err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {

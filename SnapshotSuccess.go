@@ -20,7 +20,7 @@ func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error
 		Success: true,
 		Status:  200,
 		Results: decodedBody,
-		Error:   nil,
+		Error:   "",
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {
