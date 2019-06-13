@@ -1,4 +1,4 @@
-// Amazon Seller Utilities API Responses
+// Package utilities Amazon Seller Utilities API Responses
 package utilities
 
 import (
@@ -15,7 +15,7 @@ func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error
 	if errDecode != nil {
 		return SnapshotError(w, version, 404, errDecode)
 	}
-	apiResponse := ApiResponse{
+	apiResponse := APIResponse{
 		Version: version,
 		Success: true,
 		Status:  200,

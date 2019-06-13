@@ -1,4 +1,4 @@
-// Package utitlities
+// Package utilities Amazon snapshot response
 package utilities
 
 // SnapshotResponse The Amazon Snapshot response
@@ -6,7 +6,7 @@ type SnapshotResponse struct {
 	Title      string `json:"title"`
 	Type       string `json:"type"`
 	Properties struct {
-		SnapshotId struct {
+		SnapshotID struct {
 			Description string `json:"description"`
 			Type        string `json:"type"`
 		} `json:"snapshotId"`
@@ -37,5 +37,5 @@ type SnapshotResponse struct {
 	} `json:"properties"`
 	Code      string `json:"code"`
 	Details   string `json:"details"`
-	RequestId string `json:"requestId"`
+	RequestID string `json:"requestId"`
 }

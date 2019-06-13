@@ -1,4 +1,4 @@
-// Package utitlities
+// Package utilities Internal Amazon Token struct
 package utilities
 
 import "time"
