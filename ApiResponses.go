@@ -61,6 +61,12 @@ func SnapshotError(w http.ResponseWriter, version int, code int, err error) {
 		Results: SnapshotResponse{},
 		Error:   err,
 	}
+	apiResponseJSON, err := json.Marshal(apiResponse)
+	if err != nil {
+		log.Panic(err)
+		panic(err)
+	}
+	log.Output(1, string(apiResponseJSON))
 	json.NewEncoder(w).Encode(apiResponse)
 	return
 }
