@@ -1,8 +1,8 @@
 // Package utilities Amazon snapshot response
 package utilities
 
-// SnapshotResponse The Amazon Snapshot response
-type SnapshotResponse struct {
+// GetSnapshotResponse The Amazon Snapshot response
+type GetSnapshotResponse struct {
 	Title      string `json:"title"`
 	Type       string `json:"type"`
 	Properties struct {

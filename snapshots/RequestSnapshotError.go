@@ -3,23 +3,18 @@ package utilities
 
 import (
 	"encoding/json"
-	"io"
 	"log"
 	"net/http"
 )
 
-// RequestSnapshotSuccess A success response from the API
-func RequestSnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error {
-	var decodedBody RequestSnapshotResponse
-	errDecode := json.NewDecoder(result).Decode(&decodedBody)
-	if errDecode != nil {
-		return RequestSnapshotError(w, version, 404, errDecode)
-	}
+// RequestSnapshotError An error response from the API
+func RequestSnapshotError(w http.ResponseWriter, version int, code int, err error) error {
 	apiResponse := RequestSnapshotAPIResponse{
 		Version: version,
 		Success: true,
-		Status:  200,
-		Results: decodedBody,
+		Status:  code,
+		Results: RequestSnapshotResponse{},
+		Error:   err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {

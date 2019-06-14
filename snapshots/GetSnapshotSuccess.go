@@ -8,14 +8,14 @@ import (
 	"net/http"
 )
 
-// SnapshotSuccess A success response from the API
-func SnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error {
-	var decodedBody SnapshotResponse
+// GetSnapshotSuccess A success response from the API
+func GetSnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error {
+	var decodedBody GetSnapshotResponse
 	errDecode := json.NewDecoder(result).Decode(&decodedBody)
 	if errDecode != nil {
-		return SnapshotError(w, version, 404, errDecode)
+		return GetSnapshotError(w, version, 404, errDecode)
 	}
-	apiResponse := SnapshotAPIResponse{
+	apiResponse := GetSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  200,
