@@ -1,2 +1,1 @@
-module reports
-module snapshots
+module github.com/amazon-sellers-tool/utilities
