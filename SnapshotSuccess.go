@@ -7,7 +7,7 @@ import (
 )
 
 // SnapshotSuccess A success response from the API
-func SnapshotSuccess(version int, body []byte) (*SnapshotResponse, error) {
+func SnapshotSuccess(body []byte) (*SnapshotResponse, error) {
 	var s = new(SnapshotResponse)
 	err := json.Unmarshal(body, &s)
 	if err != nil {
