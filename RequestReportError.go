@@ -7,13 +7,13 @@ import (
 	"net/http"
 )
 
-// ReportError An error response from the API
-func ReportError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := ReportAPIResponse{
+// RequestReportError An error response from the API
+func RequestReportError(w http.ResponseWriter, version int, code int, err error) error {
+	apiResponse := RequestReportAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  code,
-		Results: ReportResponse{},
+		Results: RequestReportResponse{},
 		Error:   err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
