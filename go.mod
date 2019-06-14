@@ -1,1 +1,5 @@
-import "github.com/amazon-sellers-tool/utilities"
+module utilities
+
+require (
+	github.com/amazon-sellers-tool/utilities
+)
