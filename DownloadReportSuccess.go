@@ -3,13 +3,12 @@ package utilities
 
 import (
 	"encoding/json"
-	"io"
 	"log"
 	"net/http"
 )
 
 // DownloadReportSuccess A success response from the API
-func DownloadReportSuccess(w http.ResponseWriter, version int, result io.Reader) error {
+func DownloadReportSuccess(w http.ResponseWriter, version int) error {
 	apiResponse := GetSnapshotAPIResponse{
 		Version: version,
 		Success: true,
