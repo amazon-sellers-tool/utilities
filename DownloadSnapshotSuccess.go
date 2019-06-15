@@ -7,9 +7,9 @@ import (
 	"net/http"
 )
 
-// DownloadReportSuccess A success response from the API
-func DownloadReportSuccess(w http.ResponseWriter, version int) error {
-	apiResponse := DownloadReportAPIResponse{
+// DownloadSnapshotSuccess A success response from the API
+func DownloadSnapshotSuccess(w http.ResponseWriter, version int) error {
+	apiResponse := DownloadSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  200,
