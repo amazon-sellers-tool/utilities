@@ -13,8 +13,8 @@ func DownloadReportError(w http.ResponseWriter, version int, code int, err error
 		Version: version,
 		Success: true,
 		Status:  code,
-		Results: DownloadReportResponse{},
-		Error:   err.Error(),
+		// Results: DownloadReportResponse{},
+		Error: err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {

@@ -14,8 +14,8 @@ func DownloadReportSuccess(w http.ResponseWriter, version int, result io.Reader)
 		Version: version,
 		Success: true,
 		Status:  200,
-		Results: decodedBody,
-		Error:   "",
+		// Results: decodedBody,
+		Error: "",
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {
