@@ -9,7 +9,7 @@ import (
 
 // RequestSnapshotError An error response from the API
 func RequestSnapshotError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := utilities.RequestSnapshotAPIResponse{
+	apiResponse := RequestSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  code,
