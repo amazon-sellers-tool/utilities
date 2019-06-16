@@ -1,8 +1,3 @@
-module CentralDispatcher
+module github.com/amazon-sellers-tool/utilities/CentralDispatcher/CentralDispatcher
 
 go 1.11
-
-require(
-  CentralDispatcherAPIResponse
-  CentralDispatcherSuccess
-)

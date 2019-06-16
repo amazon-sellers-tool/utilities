@@ -1,1 +1,1 @@
-module GetAdTypes
+module github.com/amazon-sellers-tool/utilities/GetAdTypes

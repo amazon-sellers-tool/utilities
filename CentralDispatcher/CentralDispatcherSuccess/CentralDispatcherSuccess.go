@@ -6,8 +6,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-
-	"CentralDispatcher"
 )
 
 // CentralDispatcherSuccess A success response from the API

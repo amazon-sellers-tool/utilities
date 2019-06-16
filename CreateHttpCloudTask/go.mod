@@ -1,4 +1,4 @@
-module CreateHttpCloudTask
+module github.com/amazon-sellers-tool/utilities/CreateHttpCloudTask
 
 go 1.12
 
