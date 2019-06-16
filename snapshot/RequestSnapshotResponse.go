@@ -1,5 +1,5 @@
-// Package utilities Amazon snapshot response
-package utilities
+// Package snapshot Amazon snapshot response
+package snapshot
 
 // RequestSnapshotResponse The Amazon Snapshot response
 type RequestSnapshotResponse struct {

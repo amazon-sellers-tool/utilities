@@ -1,5 +1,5 @@
-// Package utilities Amazon Seller Utilities API Responses
-package utilities
+// Package snapshot Amazon Seller Utilities API Responses
+package snapshot
 
 import (
 	"encoding/json"
@@ -7,14 +7,14 @@ import (
 	"net/http"
 )
 
-// DownloadSnapshotSuccess A success response from the API
-func DownloadSnapshotSuccess(w http.ResponseWriter, version int) error {
+// DownloadSnapshotError An error response from the API
+func DownloadSnapshotError(w http.ResponseWriter, version int, code int, err error) error {
 	apiResponse := DownloadSnapshotAPIResponse{
 		Version: version,
 		Success: true,
-		Status:  200,
-		// Results: decodedBody,
-		Error: "",
+		Status:  code,
+		// Results: DownloadSnapshotResponse{},
+		Error: err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {

@@ -1,5 +1,5 @@
-// Package utilities Amazon Seller Utilities API Responses
-package utilities
+// Package snapshot Amazon Seller Utilities API Responses
+package snapshot
 
 import (
 	"encoding/json"
@@ -8,19 +8,18 @@ import (
 	"net/http"
 )
 
-// RequestReportSuccess A success response from the API
-func RequestReportSuccess(w http.ResponseWriter, version int, result io.Reader) error {
-	var decodedBody RequestReportResponse
+// RequestSnapshotSuccess A success response from the API
+func RequestSnapshotSuccess(w http.ResponseWriter, version int, result io.Reader) error {
+	var decodedBody RequestSnapshotResponse
 	errDecode := json.NewDecoder(result).Decode(&decodedBody)
 	if errDecode != nil {
-		return RequestReportError(w, version, 404, errDecode)
+		return RequestSnapshotError(w, version, 404, errDecode)
 	}
-	apiResponse := RequestReportAPIResponse{
+	apiResponse := RequestSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  200,
 		Results: decodedBody,
-		Error:   "",
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {

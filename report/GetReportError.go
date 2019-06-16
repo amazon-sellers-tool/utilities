@@ -1,5 +1,5 @@
-// Package utilities Amazon Seller Utilities API Responses
-package utilities
+// Package report Amazon Seller Utilities API Responses
+package report
 
 import (
 	"encoding/json"
@@ -7,13 +7,13 @@ import (
 	"net/http"
 )
 
-// RequestReportError An error response from the API
-func RequestReportError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := RequestReportAPIResponse{
+// GetReportError An error response from the API
+func GetReportError(w http.ResponseWriter, version int, code int, err error) error {
+	apiResponse := GetReportAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  code,
-		Results: RequestReportResponse{},
+		Results: GetReportResponse{},
 		Error:   err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)

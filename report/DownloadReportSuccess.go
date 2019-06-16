@@ -1,5 +1,5 @@
-// Package utilities Amazon Seller Utilities API Responses
-package utilities
+// Package report Amazon Seller Utilities API Responses
+package report
 
 import (
 	"encoding/json"

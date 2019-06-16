@@ -1,5 +1,5 @@
-// Package utilities Amazon Seller Utilities API Responses
-package utilities
+// Package snapshot Amazon Seller Utilities API Responses
+package snapshot
 
 import (
 	"encoding/json"
@@ -7,13 +7,13 @@ import (
 	"net/http"
 )
 
-// GetReportError An error response from the API
-func GetReportError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := GetReportAPIResponse{
+// GetSnapshotError An error response from the API
+func GetSnapshotError(w http.ResponseWriter, version int, code int, err error) error {
+	apiResponse := GetSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  code,
-		Results: GetReportResponse{},
+		Results: GetSnapshotResponse{},
 		Error:   err.Error(),
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
