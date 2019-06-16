@@ -1,3 +1,7 @@
 github.com/amazon-sellers-tool/utilities/CentralDispatcher v0.0.0-20190616070058-5d4bb84d19ef h1:ysIh5PQxmo3N5lf35B+S8sx8MYgRa5T/1w8t2KX2L2A=
 github.com/amazon-sellers-tool/utilities/CentralDispatcher v0.0.0-20190616070058-5d4bb84d19ef/go.mod h1:+lrw5oOxmcdTvNCtTEEsTVAnSuRf5dm8VPWbDq8jrvY=
+github.com/amazon-sellers-tool/utilities/GetReport v0.0.0-20190616072335-d5476a0aeaf2 h1:2NkCg11u7nAmibmUi0JrSM1V9sbL438cHRZApGhFyjM=
+github.com/amazon-sellers-tool/utilities/GetReport v0.0.0-20190616072335-d5476a0aeaf2/go.mod h1:LtE05diiRDzAkUpoXj94oF5Ri3kxCC1DJH6Ely/pRnI=
+github.com/amazon-sellers-tool/utilities/GetSnapshot v0.0.0-20190616072335-d5476a0aeaf2 h1:KgNQVxpdMjp3uEa0+ChYIbF008wpzLaTZbtt3157H6Q=
+github.com/amazon-sellers-tool/utilities/GetSnapshot v0.0.0-20190616072335-d5476a0aeaf2/go.mod h1:r6YYSqOHFqCTY+0ALHEzN2yC7kI8PsghVHgYog7BPlg=
 github.com/amazon-sellers-tool/utilities/RequestSnapshot/RequestSnapshotError v0.0.0-20190616070058-5d4bb84d19ef h1:5lhApdapEutni2EuDnGcDwdOMmLVGWpdLhL36/MC8ww=
