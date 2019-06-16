@@ -10,14 +10,7 @@ import (
 )
 
 // createHTTPTask creates a new task in your with a HTTP target.
-func createHTTPTask(queueID, url, message string, projectID, locationID) (*taskspb.Task, error) {
-  if projectID == nil {
-    projectID = os.Getenv(PROJECT_ID)
-  }
-  if locationID == nil {
-    locationID = os.Getenv(LOCATION_ID)
-  }
-
+func createHTTPTask(projectID, locationID, queueID, url, message string) (*taskspb.Task, error) {
 	// Create a new Cloud Tasks client instance.
 	// See https://godoc.org/cloud.google.com/go/cloudtasks/apiv2beta3
 	ctx := context.Background()
@@ -27,6 +20,9 @@ func createHTTPTask(queueID, url, message string, projectID, locationID) (*tasks
 	}
 
 	// Build the Task queue path.
+	// e.g. projectID = amazon-seller-tool
+	// e.g. locationID = us-west2
+	// e.g. requestQueueID = amazon-ad-api-requests
 	queuePath := fmt.Sprintf("projects/%s/locations/%s/queues/%s", projectID, locationID, queueID)
 
 	// Build the Task payload.
