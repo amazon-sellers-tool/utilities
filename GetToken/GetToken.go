@@ -41,7 +41,7 @@ func GetToken(profileID string, userID string) (token string, err error) {
 		return "", err
 	}
 
-	var amazonToken AmazonToken
+	var amazonToken utilities.AmazonToken
 
 	err = json.NewDecoder(resp.Body).Decode(&amazonToken)
 	if err != nil {

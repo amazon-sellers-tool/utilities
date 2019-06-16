@@ -5,11 +5,13 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+
+	"github.com/amazon-sellers-tool/utilities/DownloadSnapshot/DownloadSnapshotAPIResponse"
 )
 
 // DownloadSnapshotSuccess A success response from the API
 func DownloadSnapshotSuccess(w http.ResponseWriter, version int) error {
-	apiResponse := DownloadSnapshotAPIResponse{
+	apiResponse := utilities.DownloadSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  200,

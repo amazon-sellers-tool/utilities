@@ -6,11 +6,13 @@ import (
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/amazon-sellers-tool/utilities/CentralDispatcher/CentralDispatcherAPIResponse"
 )
 
 // CentralDispatcherSuccess A success response from the API
 func CentralDispatcherSuccess(w http.ResponseWriter, version int, results map) error {
-	apiResponse := CentralDispatcherAPIResponse{
+	apiResponse := utilities.CentralDispatcherAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  200,

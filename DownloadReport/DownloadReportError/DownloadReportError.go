@@ -5,11 +5,13 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+
+	"github.com/amazon-sellers-tool/utilities/DownloadReport/DownloadReportAPIResponse"
 )
 
 // DownloadReportError An error response from the API
 func DownloadReportError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := DownloadReportAPIResponse{
+	apiResponse := utilities.DownloadReportAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  code,
