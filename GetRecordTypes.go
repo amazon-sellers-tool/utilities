@@ -13,10 +13,16 @@ import (
 func GetRecordTypes(adType string) recordTypes map {
 	validRecordTypes := map[string]string{
 		"sp": []string{
-			"campaigns","adGroups","keywords","productAds","targets",
+			"campaigns",
+			"adGroups",
+			"keywords",
+			"productAds",
+			"targets",
 		},
 		"hsa": []string{
-			"campaigns","adGroups","keywords",
+			"campaigns",
+			"adGroups",
+			"keywords",
 		}
 	}
 
