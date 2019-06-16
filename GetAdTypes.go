@@ -5,8 +5,8 @@ package utilities
 // @param string profileID Profile id
 // @param string userID User id
 // @return AmazonToken
-func GetAdTypes() [2]string {
-	adTypes := [2]string{
+func GetAdTypes() []string {
+	adTypes := []string{
 		"sp",
 		"hsa",
 	}
