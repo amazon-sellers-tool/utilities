@@ -1,5 +1,5 @@
 // Package utilities Amazon snapshot response
-package utilities
+package report
 
 // RequestReportResponse The Amazon Report response
 type RequestReportResponse struct {

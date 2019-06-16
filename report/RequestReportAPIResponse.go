@@ -1,5 +1,5 @@
 // Package utilities Internal API response
-package utilities
+package report
 
 // RequestReportAPIResponse The Amazon Seller Tool response
 type RequestReportAPIResponse struct {
