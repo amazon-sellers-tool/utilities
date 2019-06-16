@@ -8,7 +8,7 @@ import (
 )
 
 // CentralDispatcherSuccess A success response from the API
-func CentralDispatcherSuccess(w http.ResponseWriter, version int, results map[string]string) error {
+func CentralDispatcherSuccess(w http.ResponseWriter, version int, results []string) error {
 	apiResponse := CentralDispatcherAPIResponse{
 		Version: version,
 		Success: true,
