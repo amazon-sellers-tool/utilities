@@ -10,7 +10,7 @@ import (
 // @param string profileID Profile id
 // @param string userID User id
 // @return AmazonToken
-func GetRecordTypes(adType string) recordTypes map {
+func GetRecordTypes(adType string) recordTypes map[string]string {
 	validRecordTypes := map[string]string{
 		"sp": []string{
 			"campaigns",
@@ -23,7 +23,7 @@ func GetRecordTypes(adType string) recordTypes map {
 			"campaigns",
 			"adGroups",
 			"keywords",
-		}
+		},
 	}
 
 	// Check the validity of record type
