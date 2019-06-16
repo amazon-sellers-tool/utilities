@@ -7,7 +7,7 @@ import ()
 // @param string profileID Profile id
 // @param string userID User id
 // @return AmazonToken
-func GetAdTypes() adTypes map {
+func GetAdTypes() adTypes []string {
 	adTypes := [...]string{
 		"sp", "hsa"
 	}
