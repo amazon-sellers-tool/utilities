@@ -3,14 +3,13 @@ package utilities
 
 import (
 	"log"
-	"strings"
 )
 
 // GetRecordTypes Very important function that retrieves a token based on a profile id.
 // @param string profileID Profile id
 // @param string userID User id
 // @return AmazonToken
-func GetRecordTypes(adType string) recordTypes map[string]string {
+func GetRecordTypes(adType string) []string {
 	validRecordTypes := map[string]string{
 		"sp": []string{
 			"campaigns",
