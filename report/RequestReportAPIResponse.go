@@ -1,4 +1,4 @@
-// Package utilities Internal API response
+// Package report Internal API response
 package report
 
 // RequestReportAPIResponse The Amazon Seller Tool response

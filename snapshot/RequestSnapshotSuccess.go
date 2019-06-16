@@ -1,5 +1,5 @@
-// Package utilities Amazon Seller Utilities API Responses
-package utilities
+// Package snapshot Amazon Seller Utilities API Responses
+package snapshot
 
 import (
 	"encoding/json"

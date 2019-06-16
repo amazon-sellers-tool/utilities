@@ -1,5 +1,5 @@
-// Package utilities Internal API response
-package utilities
+// Package snapshot Internal API response
+package snapshot
 
 // DownloadSnapshotAPIResponse The Amazon Seller Tool response
 type DownloadSnapshotAPIResponse struct {

@@ -1,4 +1,4 @@
-// Package utilities Amazon Seller Utilities API Responses
+// Package report Amazon Seller Utilities API Responses
 package report
 
 import (

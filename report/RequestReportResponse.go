@@ -1,4 +1,4 @@
-// Package utilities Amazon snapshot response
+// Package report Amazon snapshot response
 package report
 
 // RequestReportResponse The Amazon Report response
