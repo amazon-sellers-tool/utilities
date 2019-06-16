@@ -14,7 +14,7 @@ func CentralDispatcherSuccess(w http.ResponseWriter, version int, results map[st
 		Success: true,
 		Status:  200,
 		Results: results,
-		Error:   nil,
+		Error:   "",
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {
