@@ -5,13 +5,11 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-
-	"github.com/amazon-sellers-tool/utilities/DownloadSnapshot/DownloadSnapshotAPIResponse"
 )
 
 // DownloadSnapshotError An error response from the API
 func DownloadSnapshotError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := utilities.DownloadSnapshotAPIResponse{
+	apiResponse := DownloadSnapshotAPIResponse{
 		Version: version,
 		Success: true,
 		Status:  code,

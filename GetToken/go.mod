@@ -1,3 +1,3 @@
-module github.com/amazon-sellers-tool/utilities/GetToken
+module GetToken
 
 go 1.11

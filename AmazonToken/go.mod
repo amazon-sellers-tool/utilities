@@ -1,3 +1,3 @@
-module github.com/amazon-sellers-tool/utilities/AmazonToken
+module AmazonToken
 
 go 1.11
