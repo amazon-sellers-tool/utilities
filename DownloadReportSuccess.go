@@ -7,14 +7,14 @@ import (
 	"net/http"
 )
 
-// ReportError An error response from the API
-func ReportError(w http.ResponseWriter, version int, code int, err error) error {
-	apiResponse := ReportAPIResponse{
+// DownloadReportSuccess A success response from the API
+func DownloadReportSuccess(w http.ResponseWriter, version int) error {
+	apiResponse := DownloadReportAPIResponse{
 		Version: version,
 		Success: true,
-		Status:  code,
-		Results: ReportResponse{},
-		Error:   err.Error(),
+		Status:  200,
+		// Results: decodedBody,
+		Error: "",
 	}
 	apiResponseJSON, err := json.Marshal(apiResponse)
 	if err != nil {
