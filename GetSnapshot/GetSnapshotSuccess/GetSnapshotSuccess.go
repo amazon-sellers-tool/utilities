@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+
+	"github.com/amazon-sellers-tool/utilities"
 )
 
 // GetSnapshotSuccess A success response from the API
